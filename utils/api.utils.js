@@ -1,4 +1,4 @@
-const ResponseData = require('../api/structures/ResponseData');
+const ResponseData = require('../api/dtos/ResponseData');
 
 const { STATUS_CODES } = require('../constants/api.constants');
 

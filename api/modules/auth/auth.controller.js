@@ -1,5 +1,5 @@
 const BaseController = require('../base/base.controller');
-const UnauthorizedError = require('../../structures/errors/UnauthorizedError');
+const UnauthorizedError = require('../../dtos/errors/UnauthorizedError');
 
 const { signToken } = require('../../../utils/jwt.utils');
 

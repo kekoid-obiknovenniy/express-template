@@ -3,8 +3,8 @@ const JwtStrategy = require('passport-jwt').Strategy;
 
 const User = require('./models/User');
 
-const ResponseData = require('./api/structures/ResponseData');
-const UnauthorizedError = require('./api/structures/errors/UnauthorizedError');
+const ResponseData = require('./api/dtos/ResponseData');
+const UnauthorizedError = require('./api/dtos/errors/UnauthorizedError');
 
 const { STATUS_CODES } = require('./constants/api.constants');
 

@@ -1,6 +1,6 @@
 const BaseService = require('../base/base.service');
 
-const BadRequestError = require('../../structures/errors/BadRequestError');
+const BadRequestError = require('../../dtos/errors/BadRequestError');
 
 class UserService extends BaseService {
   async createUser(data) {
