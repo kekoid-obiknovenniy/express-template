@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { transformRequest } = require('../../../utils/api.utils');
+const { transformRequest } = require('../../../utils/decorators');
 const { jwtAuthenticateMiddleware } = require('../../../passport');
 
 class BaseController {

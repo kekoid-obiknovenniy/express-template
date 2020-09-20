@@ -1,7 +1,9 @@
 const BaseController = require('../base/base.controller');
 const UnauthorizedError = require('../../dtos/errors/UnauthorizedError');
 
-const { signToken } = require('../../../utils/jwt.utils');
+const { validateUser } = require('../user/user.validator');
+
+const { signToken } = require('../../../utils/jwt');
 
 const { API_METHODS } = require('../../../constants/api.constants');
 
@@ -10,8 +12,18 @@ class AuthController extends BaseController {
     super(params);
 
     this.routes = [
-      { method: API_METHODS.POST, path: '/register', handler: this.register.bind(this) },
-      { method: API_METHODS.POST, path: '/login', handler: this.login.bind(this) },
+      {
+        method: API_METHODS.POST,
+        path: '/register',
+        handler: this.register.bind(this),
+        validators: [validateUser],
+      },
+      {
+        method: API_METHODS.POST,
+        path: '/login',
+        handler: this.login.bind(this),
+        validators: [validateUser],
+      },
     ];
   }
 
