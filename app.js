@@ -14,8 +14,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-initDatabase();
-initPassport(app);
-initApi(app);
+(async () => {
+  await initDatabase();
+  await initPassport(app);
+  await initApi(app);
 
-app.listen(port, () => console.log(`app starts at ${port} port`));
+  app.listen(port, () => console.log(`app starts at ${port} port`));
+})();
